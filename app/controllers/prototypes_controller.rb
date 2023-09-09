@@ -26,6 +26,7 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    @prototype = Prototype.find(params[:id])
   end
 
   def update
@@ -59,4 +60,9 @@ class PrototypesController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @prototype.user
+  end
 end
+
