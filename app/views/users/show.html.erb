@@ -2,30 +2,31 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "ユーザー名さんの情報"%>
+       <div class="user-name">
+        <%= link_to "#{@user.name}さん", "/users/#{@user.id}" %> 
       </h2>
       <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">名前</th>
-            <td class="table__col2"><%= "ユーザー名" %></td>
+            <td class="table__col2"><%= link_to "#{@user.name}", "/users/#{@user.id}" %></td>
           </tr>
           <tr>
             <th class="table__col1">プロフィール</th>
-            <td class="table__col2"><%= "ユーザーのプロフィール" %></td>
+            <td class="table__col2"><%= link_to "#{@user.profile}", "/users/#{@user.id}" %></td>
           </tr>
           <tr>
             <th class="table__col1">所属</th>
-            <td class="table__col2"><%= "ユーザーの所属" %></td>
+            <td class="table__col2"><%= link_to "#{@user.position}", "/users/#{@user.id}" %></td>
           </tr>
           <tr>
             <th class="table__col1">役職</th>
-            <td class="table__col2"><%= "ユーザーの役職" %></td>
+            <td class="table__col2"><%= link_to "#{@user.occupation}", "/users/#{@user.id}" %></td>
           </tr>
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "ユーザー名さんのプロトタイプ"%>
+        <%= link_to "#{@user.name}さんのプロトタイプ", "/users/#{@user.id}" %> 
       </h2>
       <div class="user__card">
         <%= render partial: 'prototypes/prototype', collection: @user.prototypes %>
